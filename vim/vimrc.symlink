@@ -25,8 +25,7 @@ NeoBundle 'benmills/vimux'
 " markdown syntax highlight and browser preview
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
-"NeoBundle 'waylan/vim-markdown-extra-preview'
-NeoBundle 'JamshedVesuna/vim-markdown-preview'
+NeoBundle 'suan/vim-instant-markdown'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -807,9 +806,4 @@ let g:go_fmt_command = "goimports"
 
 " vim-markdown diable folding
 let g:vim_markdown_folding_disabled=1
-
-" vim-markdown-preview
-let vim_markdown_preview_github=1
-let vim_markdown_preview_temp_file=1
-let vim_markdown_preview_toggle=2
 
