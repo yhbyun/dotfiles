@@ -27,6 +27,9 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'suan/vim-instant-markdown'
 
+" editorconfig
+NeoBundle "editorconfig/editorconfig-vim"
+
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
