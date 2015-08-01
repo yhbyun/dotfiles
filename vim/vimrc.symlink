@@ -25,7 +25,8 @@ NeoBundle 'benmills/vimux'
 " markdown syntax highlight and browser preview
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'waylan/vim-markdown-extra-preview'
+"NeoBundle 'waylan/vim-markdown-extra-preview'
+NeoBundle 'JamshedVesuna/vim-markdown-preview'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
