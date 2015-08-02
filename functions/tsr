@@ -1,0 +1,6 @@
+
+# tmux send-keys right
+tsr() {
+    args=$*
+    tmux send-keys -t left "$args" C-m
+}

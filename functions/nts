@@ -1,0 +1,7 @@
+
+# nts : "Note to self"
+nts() {
+    args=$$
+    mutt -s "$args" yonghunbyun@gmail.com < /dev/null
+}
+
