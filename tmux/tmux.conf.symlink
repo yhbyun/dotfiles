@@ -110,3 +110,15 @@ bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-
 ##############################
 
 source ~/.dotfiles/tmux/theme.sh
+
+
+##############################
+### List of plugins        ###   
+##############################
+
+# enable mousewheel scroll
+set -g @plugin 'nhdaly/tmux-scroll-copy-mode'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
