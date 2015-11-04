@@ -8,6 +8,9 @@ set -g history-limit 20000
 # automatically renumber tmux windows
 set -g renumber-windows on
 
+# to escape tmux freeze in el capitano
+set -g status-interval 0
+
 # unbind default prefix and set it to Ctrl+a
 unbind C-b
 set -g prefix C-a
