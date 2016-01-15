@@ -1,0 +1,20 @@
+# homestead helper function
+
+hs() {
+  cd ~/work/laravel/homestead
+   
+  command="$1"
+
+  if [ "$command" = "edit" ]; then
+    open ~/.homestead/homestead.yaml
+  else
+    if [ -z "$command" ]; then 
+      command="ssh"
+    fi
+   
+    eval "vagrant ${command}"
+  fi
+
+  #switch back to directory where command was performed in
+  cd -
+}
