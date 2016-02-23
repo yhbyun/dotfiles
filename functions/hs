@@ -18,3 +18,22 @@ hs() {
   #switch back to directory where command was performed in
   cd -
 }
+
+hs7() {
+  cd ~/work/vagrant/homestead7
+   
+  command="$1"
+
+  if [ "$command" = "edit" ]; then
+    open Homestead.yaml
+  else
+    if [ -z "$command" ]; then 
+      command="ssh"
+    fi
+   
+    eval "vagrant ${command}"
+  fi
+
+  #switch back to directory where command was performed in
+  cd -
+}
