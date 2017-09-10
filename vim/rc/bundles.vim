@@ -11,9 +11,14 @@ if has('vim_starting')
     endif
 endif
 
+" Required:
+execute 'set runtimepath+='. fnameescape(g:config.bundlesPath . 'neobundle.vim/')
+
+" Required:
 call neobundle#begin(expand(g:config.bundlesPath))
 
 " Let NeoBundle handle bundles
+" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc', {
@@ -308,7 +313,10 @@ let g:config.colorscheme = "jellybeans"
 
 call neobundle#end()
 
-if !has('vim_starting')
-    " Installation check.
-    NeoBundleCheck
-endif
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
