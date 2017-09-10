@@ -8,7 +8,7 @@ set nocompatible
 let g:config =  {
             \ 'baseDir': '~/.dotfiles/vim/rc/',
             \ 'loadFiles': {},
-            \ 'bundlesPath': '~/vimfiles/bundle/',
+            \ 'bundlesPath': '~/.vim/bundle/',
             \ 'spellDir' : '~/.dotfiles/vim/spell/',
             \ 'spellFile' : '~/.dotfiles/vim/spell/en.utf-8.add',
             \ 'undoDir' : '~/.cache/undo/',
