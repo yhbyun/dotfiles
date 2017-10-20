@@ -1,1 +1,3 @@
 set diff-options = -m --first-parent
+set status-show-untracked-files = yes
+set split-view-width = 50%
