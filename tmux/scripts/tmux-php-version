@@ -1,0 +1,4 @@
+#!/bin/bash
+PHPVersion=$(php --version | tail -r | tail -n 1 | cut -d " " -f 2);
+
+echo "v$PHPVersion"
