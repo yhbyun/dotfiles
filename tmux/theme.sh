@@ -21,7 +21,7 @@ set -g status on
 
 set -g status-interval 5
 set -g status-justify left
-set -g status-position top
+set -g status-position bottom
 
 # set color for status bar
 set -g status-style bg=default,fg=default
