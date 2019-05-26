@@ -1,0 +1,9 @@
+#!/bin/bash
+# nodenv 환경에서 현재 세션의 node 버전을 출력한다.
+version=$(nodenv local 2>&1 | cut -d " " -f 1);
+
+if [ $version="nodenv:" ]; then
+    version=$(nodenv global 2>&1 | cut -d " " -f 1);
+fi
+
+echo "v$version"

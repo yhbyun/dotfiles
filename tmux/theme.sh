@@ -41,7 +41,7 @@ set -g status-left "#[fg=colour237]#{?client_prefix,#[fg=colour202],#[fg=colour2
 # show default node version, battery status, wifi name & date time
 status_prefix="#{?client_prefix,#[fg=colour202]#(echo $(tmux show-option -gqv prefix | tr \"[:lower:]\" \"[:upper:]\" | sed 's/C-/\^/')) #[fg=colour237]⦁ ,}"
 status_php_version='#[fg=colour237]#[fg=#649C62]#(~/.dotfiles/tmux/scripts/tmux-php-version) #[fg=colour237]⦁ '
-status_node_version='#[fg=colour237]#[fg=#649C62]#(node -v) #[fg=colour237]⦁ '
+status_node_version='#[fg=colour237]#[fg=#649C62]#(~/.dotfiles/tmux/scripts/tmux-nodenv-node-version) #[fg=colour237]⦁ '
 status_battery='#(battery -t -p -G) #[fg=colour237]⦁ '
 status_wifi="#[fg=colour237]#[fg=colour243]#(~/.dotfiles/tmux/scripts/tmux-wifi)"
 # for some reason that extra space at the end prevents the date from overlaping & makes it play nice with Nerd Fonts
