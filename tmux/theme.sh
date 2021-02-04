@@ -12,7 +12,7 @@ set -g message-command-style bg=black,fg=blue
 set -g pane-border-style bg=default,fg=colour244
 set -g pane-active-border-style bg=default,fg=colour202
 setw -g pane-border-status top
-setw -g pane-border-format  " \"#{pane_current_path}\" - \"#{pane_current_command}\" " 
+setw -g pane-border-format  " \"#{pane_current_path}\" - \"#{pane_current_command}\" "
 
 # ----------------------
 # Status Bar
@@ -26,8 +26,8 @@ set -g status-position bottom
 # set color for status bar
 set -g status-style bg=default,fg=default
 
-setw -g window-status-format "#[bg=default]#{?window_activity_flag,#{?window_bell_flag,#[fg=brightred]▲,#[fg=colour243]⦁},#[fg=colour238]⦁}#[bg=default]"
-setw -g window-status-current-format "#{?window_zoomed_flag,#[fg=yellow][ #W ],#W}#[bg=default]"
+setw -g window-status-format "#I #W #[bg=default]#{?window_activity_flag,#{?window_bell_flag,#[fg=brightred]▲,#[fg=colour243]⦁},#[fg=colour238]⦁}#[bg=default]"
+setw -g window-status-current-format "#I #{?window_zoomed_flag,#[fg=yellow][ #W ],#W}#[bg=default]"
 # setw -g window-status-style bg=default,fg=colour237
 setw -g window-status-activity-style bg=default,fg=colour243
 setw -g window-status-bell-style bg=default,fg=brightred
