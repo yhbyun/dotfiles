@@ -93,7 +93,7 @@ set infercase                                   " ignore case in autocomplete
 set hlsearch                                    " highlight search
 set incsearch                                   " increment search
 set synmaxcol=400
-set lazyredraw                                  " Don't redraw while executing macros (good performance config)
+"set lazyredraw                                  " Don't redraw while executing macros (good performance config)
 set notimeout
 set t_Co=256                                    " 256bit terminal
 set ttimeout
@@ -116,7 +116,7 @@ set tm=500
 set number                                      " show line number
 set norelativenumber                            " line numbers are relative
 set nocursorline                                " don't highlight where cursor is
-set nowrap                                      " turn word wrapping on long lines off
+set wrap                                      " turn word wrapping on long lines on
 set wrapscan                                    " Searches wrap around the end of file
 set cpoptions+=$                                " when changing - mark block end with $
 set virtualedit=block
@@ -131,6 +131,7 @@ set nostartofline                               " Don't reset cursor to start of
 set helplang=en
 set keywordprg=:help
 set isfname-==                                " filenames do not contain =
+set colorcolumn=80                              
 
 if has('mouse')
     set mouse=a                               " enable mouse

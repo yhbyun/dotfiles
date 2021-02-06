@@ -1,3 +1,56 @@
+"vim-plugin Scripts-----------------------------
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+
+Plug 'pangloss/vim-javascript'
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+Plug 'terryma/vim-multiple-cursors'
+
+" UNIX shell commands
+Plug 'tpope/vim-eunuch'
+
+Plug 'tpope/vim-surround'
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'mattn/emmet-vim'
+
+Plug 'Valloric/YouCompleteMe'
+
+Plug 'nathanaelkane/vim-indent-guides'
+
+Plug 'scrooloose/syntastic'
+
+" Asynchronous Lint Engine
+" Plug 'w0rp/ale'
+
+" Plug 'airblade/vim-gitgutter'
+" 예를 포함하면 단축키 입력시 반드시 CR을 입력해아 하는 오류 발생
+
+" Plug 'reedes/vim-pencil'
+
+" status line
+" Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" theme
+Plug 'flazz/vim-colorschemes'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+"End vim-plugin Scripts-----------------------------
+
+
 " https://github.com/pgilad/dotfiles/blob/master/link/_vimrc
 
 " Note: Skip initialization for vim-tiny or vim-small.
@@ -8,7 +61,6 @@ set nocompatible
 let g:config =  {
             \ 'baseDir': '~/.dotfiles/vim/rc/',
             \ 'loadFiles': {},
-            \ 'bundlesPath': '~/.vim/bundle/',
             \ 'spellDir' : '~/.dotfiles/vim/spell/',
             \ 'spellFile' : '~/.dotfiles/vim/spell/en.utf-8.add',
             \ 'undoDir' : '~/.cache/undo/',
@@ -40,7 +92,8 @@ endif
 " <leader>es  |  Settings
 " <leader>em  |  Mappings
 " <leader>ea  |  autoCommands
-for fileToLoad in ['bundles', 'settings', 'mappings', 'autoCommands']
+"for fileToLoad in ['bundles', 'settings', 'mappings', 'autoCommands']
+for fileToLoad in ['settings', 'mappings', 'autoCommands']
     " set filename
     let b:filePath = g:config.baseDir . fileToLoad . '.vim'
     " set file object in config
@@ -50,4 +103,53 @@ for fileToLoad in ['bundles', 'settings', 'mappings', 'autoCommands']
 endfor
 
 set secure
+
+" Enable true color
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" nerdtree
+set fillchars=vert:│
+autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=Green ctermbg=NONE
+
+" fzf
+"nnoremap <C-b> :Buffers<CR>
+nnoremap <C-g>g :Ag<CR>
+nnoremap <C-g>c :Commands<CR>
+"nnoremap <C-f>l :BLines<CR>
+nnoremap <C-p> :Files<CR>
+
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'seoul256',
+    \ }
+
+" airline
+
+let g:airline_theme='molokai'
+"let g:airline_theme='cobalt2'
+let g:airline_detect_modified=1
+let g:airline_inactive_collapse=1
+let g:airline_detect_paste=1
+" 버퍼 목록 켜기
+let g:airline#extensions#tabline#enabled =1
+" 파일명만 출력
+let g:airline#extensions#tabline#fnamemod =':t'
+let g:airline#extensions#tabline#left_sep=' '
+let g:airline#extensions#tabline#left_alt_sep='¦'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+
+" coloeschme 설정
+colorscheme molokai
+
+
+
+" 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
 

@@ -2,6 +2,8 @@
 "  F-# keys mapping  "
 """"""""""""""""""""""
 nnoremap <F1> <nop>
+" toggle nerd tree
+nnoremap <F5> :NERDTreeToggle<CR>
 " toggle paste
 nnoremap <F6> :<c-u>set invpaste<cr>:set paste?<cr>
 " format from 2 spaces to 4 spaces
@@ -89,7 +91,7 @@ nnoremap <silent> <leader>cu :let @+=expand("%:t:r")<cr>:echo "Copied current fi
 " Open current dir
 nnoremap <leader>nc :NERDTreeCWD<cr>
 " open nerd tree window
-nnoremap <leader>n<tab> :NERDTreeToggle<cr>
+" nnoremap <leader>n<tab> :NERDTreeToggle<cr>
 " find current file in nerdtree
 nnoremap <leader>nf :NERDTreeFind<cr>
 """""""""""""""
@@ -141,3 +143,25 @@ vmap <leader>os <Plug>(openbrowser-smart-search)
 nnoremap <leader>mp :Me<cr>
 " break chaining on .then
 nnoremap <leader>m<cr> /\%<c-r>=line('.')<cr>l\.then:nohlsearch<cr>i l
+
+
+"""""""""""""""
+" http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<CR>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
