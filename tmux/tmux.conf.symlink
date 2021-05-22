@@ -86,6 +86,13 @@ bind -r L resize-pane -R 10
 # To select text as expected, hold Option to disable it (iTerm2)
 set -g mouse on
 
+# Toggle mouse on with ^A m
+bind m set -g mouse on \;\
+  display 'Mouse: ON'
+# Toggle mouse off with ^A M
+bind M set -g mouse off \;\
+  display 'Mouse: OFF'
+
 # maximizing and restoring windows
 unbind Up
 bind Up new-window -d -n fullscreen \; swap-pane -s fullscreen.1 \; select-window -t fullscreen
