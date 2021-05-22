@@ -29,6 +29,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'scrooloose/syntastic'
 
+Plug 'rust-lang/rust.vim'
+
 " Asynchronous Lint Engine
 " Plug 'w0rp/ale'
 
