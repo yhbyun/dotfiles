@@ -165,3 +165,6 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+" Toggle tagbar
+nmap <F8> :TagbarToggle<CR>
+
