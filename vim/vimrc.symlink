@@ -31,6 +31,8 @@ Plug 'scrooloose/syntastic'
 
 Plug 'rust-lang/rust.vim'
 
+Plug 'majutsushi/tagbar'
+
 " Asynchronous Lint Engine
 " Plug 'w0rp/ale'
 
