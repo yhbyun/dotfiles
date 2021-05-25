@@ -1,3 +1,10 @@
 set diff-options = -m --first-parent
 set status-show-untracked-files = yes
 set split-view-width = 50%
+
+#bind main <Ctrl-f> scroll-page-down
+bind generic <Ctrl-F> scroll-page-down
+bind generic <Ctrl-B> scroll-page-up
+
+
+
