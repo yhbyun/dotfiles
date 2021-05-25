@@ -86,7 +86,7 @@ set nrformats-=octal                            " no octal numbers
 set hidden                                      " A buffer becomes hidden when it is abandoned
 set showfulltag
 set backspace=eol,start,indent                  " configure backspace the expected way
-set whichwrap+=<,>,~,h,l,[,],b,s                " which special chars wrap to next line
+"set whichwrap+=<,>,~,h,l,[,],b,s                " which special chars wrap to next line
 set ignorecase                                  " ignore case when searching
 set smartcase                                   " be smart about searching
 set infercase                                   " ignore case in autocomplete
