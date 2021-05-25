@@ -33,6 +33,8 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'majutsushi/tagbar'
 
+Plug 'preservim/nerdcommenter'
+
 " Asynchronous Lint Engine
 " Plug 'w0rp/ale'
 
