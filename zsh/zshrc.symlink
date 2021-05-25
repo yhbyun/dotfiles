@@ -59,3 +59,7 @@ source $ZSH/oh-my-zsh.sh
 # prompt.zsh is executed, but zsh overwrites. So execute again.
 source $HOME/.dotfiles/zsh/prompt.zsh
 
+if [ -d "/opt/homebrew/bin" ]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
+
