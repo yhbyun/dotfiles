@@ -1,0 +1,69 @@
+#!/bin/bash
+
+MACISM="$(command -v macism)"
+
+[ -z "$MACISM" ] && exit 0
+
+ACTION="$1"
+PANE="$2"
+
+save_pane() {
+  local pane="$1"
+  local source
+
+  source="$("$MACISM" 2>/dev/null)"
+
+  if [ -n "$source" ]; then
+    tmux set-option -p -t "$pane" @input_source "$source"
+  fi
+}
+
+restore_pane() {
+  local pane="$1"
+  local source
+
+  source="$(tmux show-option -p -t "$pane" -v @input_source 2>/dev/null)"
+
+  if [ -n "$source" ]; then
+    "$MACISM" "$source" 0 >/dev/null 2>&1
+  fi
+}
+
+init_pane() {
+  local pane="$1"
+  local source
+
+  source="$(tmux show-option -p -t "$pane" -v @input_source 2>/dev/null)"
+
+  if [ -z "$source" ]; then
+    save_pane "$pane"
+  fi
+}
+
+case "$ACTION" in
+
+save)
+  save_pane "$PANE"
+  ;;
+
+restore)
+  restore_pane "$PANE"
+  ;;
+
+init)
+  init_pane "$PANE"
+  ;;
+
+client-save)
+  # iTerm2가 다른 macOS 앱으로 넘어가기 직전
+  PANE="$(tmux display-message -p '#{pane_id}')"
+  save_pane "$PANE"
+  ;;
+
+client-restore)
+  # iTerm2가 다시 활성화된 직후
+  PANE="$(tmux display-message -p '#{pane_id}')"
+  restore_pane "$PANE"
+  ;;
+
+esac

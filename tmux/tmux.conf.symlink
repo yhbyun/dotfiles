@@ -145,3 +145,31 @@ set -g @plugin 'trevarj/tmux-open-nvim'
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 
+# ============================================================
+# Per-pane macOS input source
+# iTerm2 + tmux + macism
+# ============================================================
+
+set -g focus-events on
+
+# pane → pane
+set-hook -g pane-focus-out \
+    'run-shell "~/.dotfiles/tmux/scripts/tmux-input-source save #{pane_id}"'
+
+set-hook -g pane-focus-in \
+    'run-shell "~/.dotfiles/tmux/scripts/tmux-input-source restore #{pane_id}"'
+
+# iTerm2 → 다른 macOS 앱 → iTerm2
+set-hook -g client-focus-out \
+    'run-shell "~/.dotfiles/tmux/scripts/tmux-input-source client-save"'
+
+set-hook -g client-focus-in \
+    'run-shell "~/.dotfiles/tmux/scripts/tmux-input-source client-restore"'
+
+# 새 pane / window
+set-hook -g after-split-window \
+    'run-shell "~/.dotfiles/tmux/scripts/tmux-input-source init #{pane_id}"'
+
+set-hook -g after-new-window \
+    'run-shell "~/.dotfiles/tmux/scripts/tmux-input-source init #{pane_id}"'
+
