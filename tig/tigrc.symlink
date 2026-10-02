@@ -6,5 +6,11 @@ set split-view-width = 50%
 bind generic <Ctrl-F> scroll-page-down
 bind generic <Ctrl-B> scroll-page-up
 
+# 260819 yhbyun added
+bind main   e !nvim +%(line) %(file)
+bind diff   e !nvim +%(line) %(file)
+bind status e !nvim %(file)
+bind tree   e !nvim %(file)
+bind blob   e !nvim +%(line) %(file)
 
 
