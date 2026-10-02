@@ -1,43 +1,37 @@
-cask_args appdir: '/Applications'
+# Tools the dotfiles configs depend on. Not a full app list.
+# Install: brew bundle --file=~/.dotfiles/Brewfile
 
-tap 'homebrew/bundle'
-tap 'puma/puma'
+tap "laishulu/homebrew"
+tap "splazapp/tap", trusted: { formulae: ["claudecode-notification"] }
 
-brew 'ack'
-brew 'coreutils'
-brew 'go'
-brew 'grc'
-brew 'imagemagick'
-brew 'jp2a'
-brew 'jq'
-brew 'libcaca', args: ['with-imlib2']
-brew 'libgit2'
-brew 'openssl'
-brew 'node'
-brew 'readline'
-brew 'postgresql'
-brew 'puma/puma/puma-dev'
-brew 'ruby-build'
-brew 'rbenv'
-brew 'roundup'
-brew 'spaceman-diff'
-brew 'spark'
-brew 'unrar'
-brew 'wget'
-brew 'yarn'
-brew 'youtube-dl'
+# terminal / tmux (tmux/tmux.conf.symlink)
+brew "tmux"
+brew "reattach-to-user-namespace"
+cask "iterm2"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-meslo-for-powerlevel10k"
 
-cask '1password'
-cask 'adium'
-cask 'atom'
-cask 'firefox'
-cask 'garmin-express'
-cask 'google-chrome'
-cask 'handbrake'
-cask 'mapbox-studio'
-cask 'seashore'
-cask 'slack'
-cask 'steam'
-cask 'transmission'
-cask 'tunnelbear'
-cask 'vlc'
+# Neovim / LazyVim (~/.config/nvim)
+brew "neovim"
+brew "ripgrep"
+brew "fd"
+brew "fzf"
+brew "lazygit"
+
+# macOS input source switching (tmux/scripts/tmux-input-source, nvim kr-input.lua)
+brew "laishulu/homebrew/macism"
+
+# git
+brew "tig"
+brew "gh"
+
+# shell (~/.zshrc, ~/.aliases)
+brew "nodenv"
+brew "pyenv"
+brew "eza"
+brew "pwgen"
+brew "coreutils"
+brew "wget"
+
+# Claude Code hooks (~/.claude/settings.json)
+brew "splazapp/tap/claudecode-notification"
