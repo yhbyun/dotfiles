@@ -49,6 +49,10 @@ setw -g pane-base-index 1
 # set-option -g set-titles-string "#T - #W"
 # set-window-option -g automatic-rename on
 
+# 윈도우 이름: 셸이면 현재 디렉터리 이름, Claude Code(버전 번호로 보이는 프로세스)면
+# Claude 가 정한 작업 주제(pane title, 20자), nvim 이면 nvim:디렉터리, 그 외에는 명령 이름
+set -g automatic-rename-format "#{?pane_in_mode,[tmux],#{?#{m/r:^[0-9]+\\.[0-9]+\\.[0-9]+$,#{pane_current_command}},#{=20:pane_title},#{?#{m/r:^(zsh|bash|fish|sh)$,#{pane_current_command}},#{b:pane_current_path},#{?#{==:#{pane_current_command},nvim},nvim:#{b:pane_current_path},#{pane_current_command}}}}}#{?pane_dead,[dead],}"
+
 ######################
 #### Key Bindings ####
 ######################
