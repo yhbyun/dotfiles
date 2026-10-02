@@ -1,8 +1,13 @@
 set -g default-command "reattach-to-user-namespace -l $SHELL"
 
 # tmux display things in 256 colors
-set -g default-terminal "screen-256color"
-set -ga terminal-overrides ",*:Tc"
+# to fix shift+enter as execute in claude code
+set -g default-terminal "tmux-256color"
+
+# 20260818. 필요할 것 같아서 추가해 놈
+set -g allow-passthrough on
+set -s extended-keys on
+set -as terminal-features 'tmux-256color:extkeys'
 
 set -g history-limit 20000
 
