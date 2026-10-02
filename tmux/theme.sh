@@ -48,5 +48,6 @@ status_wifi="#[fg=colour237]#[fg=colour243]#(~/.dotfiles/tmux/scripts/tmux-wifi)
 status_date_time="#[fg=colour237]#[fg=colour243]%A, %d %b %Y %H:%M#[fg=colour237] "
 
 set -g status-right-length 300
-set -g status-right "${status_prefix}${status_php_version}${status_node_version}${status_battery}${status_wifi}${status_date_time}"
+#set -g status-right "${status_prefix}${status_php_version}${status_node_version}${status_battery}${status_wifi}${status_date_time}"
+set -g status-right "#{agent_limits} #{agent_indicator} ${status_prefix}${status_php_version}${status_node_version}${status_battery}${status_wifi}${status_date_time}"
 
